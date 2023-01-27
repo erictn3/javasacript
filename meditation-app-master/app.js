@@ -35,7 +35,12 @@ const app = () => {
             play.src = './svg/play.svg'
         }
     }
-    console.log(outlineLength)
+
+    // we can animate the circle
+    song.ontimeupdate = () => {
+        let currentTime = song.currentTime;
+    }
+
 }
 
 
