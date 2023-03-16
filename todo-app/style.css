@@ -114,3 +114,34 @@ form button:hover {
     outline: none;
     border: none;
 }
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select {
+    color: orange;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+    border: none;
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    background: orange;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after {
+    background: white;
+    color: orange;
+
+}
