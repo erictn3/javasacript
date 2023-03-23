@@ -27,6 +27,7 @@ class Sprite {
         this.draw();
 
         this.position.y += this.velocity.y;
+        this.position.x += this.velocity.x;
 
         if (this.position.y + this.height + this.velocity.y >= canvas.height) {
             this.velocity.y = 0;
@@ -67,4 +68,29 @@ function animate() {
     enemy.update();
 }
 
-animate();
+animate()
+
+window.addEventListener('keydown', (e) => {
+    switch (event.key) {
+        case 'd':
+            player.velocity.x = 1;
+            break
+        case 'a':
+            player.velocity.x = -1;
+            break
+    }
+    console.log(e);
+})
+
+window.addEventListener('keyup', (e) => {
+    switch (event.key) {
+        case 'd':
+            player.velocity.x = 0;
+            break
+        case 'a':
+            player.velocity.x = 0
+            break
+    }
+    console.log(e);
+})
+
